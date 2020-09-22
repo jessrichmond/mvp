@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
+import Board from './board'
+import Post from './post'
 
 class App extends Component{
   render() {
     return(
-    <h1>HELLO SQUIRREL</h1>
+      <div className="Homepage">
+        <div className="Header">HEADER: APP NAME / signup or login / post to board</div>
+        <div className="Board"><Board /></div>
+        <div className="Post"><Post /></div>
+      </div>
+    // <h1>HELLO SQUIRREL</h1>
     )
   }
 }
