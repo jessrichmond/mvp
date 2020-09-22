@@ -8,18 +8,15 @@ const bodyParser = require('body-parser');
 
 const DIST_DIR = path.join(__dirname, '../dist');
 const HTML_FILE = path.join(DIST_DIR, 'index.html');
+const datamuse = 'https://api.datamuse.com/words?';
 
-const test = {
-  username: 'pizzaforbrkfst',
-  message: 'hello hello?'
-}
-
-app.use(bodyParser.JSON());
+app.use(bodyParser.json());
 app.use(express.static(DIST_DIR));
 
-app.get('/', (req, res) => {
-  res.status(200).send(test);
+app.get('/signup', (req, res) => {
+  res.status(200).send(req.body);
 })
+
 
 app.listen(PORT, () => {
   console.log(`!! CONNECTED TO SERVER @ PORT ${PORT} !!`);
