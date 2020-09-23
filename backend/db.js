@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const DB_NAME = 'bulletin_app';
+const DB_NAME = 'hi_haiku';
 const DB_USER = 'root';
 const DB_PASS = '';
 

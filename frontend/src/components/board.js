@@ -7,12 +7,8 @@ class Board extends Component {
   }
 
   handleClick() {
-    const { onLoad } = this.props;
-    onLoad();
-  }
-
-  listEntries() {
-    const { haikus } = this.props.state;
+    const { loadEntries } = this.props;
+    loadEntries();
   }
 
   render() {

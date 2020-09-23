@@ -9,7 +9,6 @@ class Entry extends Component {
     const entries = this.props.haikus.map((entry) => {
       return <div>{entry.message}</div>
     })
-    
     return (
       <div>{entries}</div>
     )

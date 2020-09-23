@@ -24,7 +24,7 @@ class Post extends Component {
       axios.post('/add', {
         message: this.state.value
       })
-    } else if (syllableCount < 17) { 
+    } else if (syllableCount < 17) {
       const difference = 17 - syllableCount;
       alert(`you need ${difference} more syllables!`)
     } else if (syllableCount > 17) {
