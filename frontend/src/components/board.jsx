@@ -17,8 +17,8 @@ class Board extends Component {
         <h1>hi haiku </h1>
         <button onClick={this.handleClick} type="button">show me show me</button>
       </div>
-    )
+    );
   }
 }
 
-export default Board
+export default Board;

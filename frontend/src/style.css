@@ -2,12 +2,6 @@ body {
   background-color: #a3b5a8;
 }
 
-/* textarea .haiku {
-  resize: none;
-  width: 300px;
-  height: 150px;
-} */
-
 textarea {
   resize: none;
   width: 300px;
