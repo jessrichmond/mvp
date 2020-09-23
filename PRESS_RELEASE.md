@@ -19,4 +19,4 @@ have my react components load
 and to write haikus'*
 --Jess Richmond, developer of Hi Haiku
 
-Getting started is as easy as running 'npm run web dev'... do be sure to come by for a moment of online reprieve.
+Getting started is as easy as running 'npm run start'... do be sure to come by for a moment of online reprieve.
