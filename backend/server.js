@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const app = express()
 const { PORT } = require('./.env')
 const { Entry } = require('./db')
 const path = require('path');
@@ -9,7 +8,8 @@ const bodyParser = require('body-parser');
 const DIST_DIR = path.join(__dirname, '../dist');
 const HTML_FILE = path.join(DIST_DIR, 'index.html');
 const datamuse = 'https://api.datamuse.com/words?';
-   
+
+const app = express();
 app.use(bodyParser.json());
 app.use(express.static(DIST_DIR));
 
@@ -17,15 +17,31 @@ app.use(express.static(DIST_DIR));
 //   res.status(200).send('YOOOOO');
 // })
 
-
-app.post('/signup', (req, res) => {
-  const { username } = req.body;
-  res.send('hello');
+app.get('/load_entries', (req, res) => {
+  Entry.findAll()
+    .then((entries) => {
+      res.status(200).send(entries);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    })
 })
 
-// app.post('/signup', (req, res) => {
-//   const { username, password } = req.body;
-//   return User.create({ username, password});
+app.post('/add', (req, res) => {
+  const { message } = req.body;
+  Entry.create({ message })
+    .then((message) => {
+      console.log('ok');
+      res.status(201).end;
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    })
+})
+
+// app.get('/search', (req, res) => {
+//   console.log(req.body);
+//   res.send
 // })
 
 

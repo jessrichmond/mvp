@@ -11,16 +11,15 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
 
 const Entry = sequelize.define('Entry', {
   messageId: Sequelize.INTEGER,
-  body: Sequelize.STRING,
+  message: Sequelize.STRING,
 })
 
-sequelize.sync({ force: true })
+sequelize.sync()
   .then(() => console.log('database & tables created'))
   .catch((err) => console.log('err in sync', err))
 
 
 module.exports = {
-  // connection
   Entry
 };
 

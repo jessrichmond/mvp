@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Board from './board'
-import Post from './post'
+import Board from './components/board'
+import Post from './components/post'
+import WordSearch from './components/wordSearch'
 
 class App extends Component{
   constructor(props) {
@@ -24,13 +25,9 @@ class App extends Component{
       <div>
         <div className="Header">BULLETIN / signup or login / post to board</div>
         <div className="Board"><Board /></div>
-        <div className="button" onClick={this.togglePop}>
-          <button>LOG IN</button>
-        </div>
-        {this.state.seen ? <PopUp toggle={this.togglePop} /> : null}
         <div className="Post"><Post /></div>
+        <div className="WordSearch"><WordSearch /></div>
       </div>
-    // <h1>HELLO SQUIRREL</h1>
     )
   }
 }
