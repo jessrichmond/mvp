@@ -24,26 +24,26 @@ class Post extends Component {
       axios.post('/add', {
         message: this.state.value
       })
-      .then(() => console.log('haiku posted'))
-      .catch(() => console.log('error posting haiku'))
-    } else if (syllableCount < 17) { // if syllable count is less than or greater than
-      // you need x more syllables; find an addition here
-      // find a word to substitute
+    } else if (syllableCount < 17) { 
+      const difference = 17 - syllableCount;
+      alert(`you need ${difference} more syllables!`)
     } else if (syllableCount > 17) {
-      // you need x fewer syllables; take some out or find a substitute here
-      // find a word to substitute
+      const difference = syllableCount - 17;
+      alert(`you need ${difference} fewer syllables!`)
     }
+
+    event.preventDefault();
+
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            do a little dance make a little (haiku)
-            <input type="textarea" value={this.state.haikuValue} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
+        <form onSubmit={this.handleSubmit}><br />
+          <label><b>do a little dance</b></label><br />
+
+            <textarea value={this.state.value} onChange={this.handleChange} /><br />
+          <input type="submit" value="Submit" /><br />
         </form>
       </div>
     )

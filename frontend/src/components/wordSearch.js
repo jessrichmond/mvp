@@ -38,19 +38,16 @@ class WordSearch extends Component {
 
   }
 
+
   render() {
-    const { options } = this.state;
 
     return (
       <div>
-        <form onSubmit={this.handleSearch}>
-          <label>need help finding the right word? what are you trying to describe?</label>
-          <input type="textarea" value={this.state.value} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
+        <form onSubmit={this.handleSearch}><br />
+          <label><b>help me find a word describing...</b></label><br />
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <br /><input type="submit" value="Submit" /> <br />
         </form>
-        {/* <ul>
-          {this.state.options.map(option => <li>{option.word}</li>)}
-        </ul> */}
       </div>
     )
   }

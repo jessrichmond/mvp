@@ -15,7 +15,9 @@ app.use(express.static(DIST_DIR));
 
 
 app.get('/home', (req, res) => {
-  Entry.findAll()
+  Entry.findAll({
+    limit: 20
+  })
     .then((entries) => {
       res.status(200).send(entries);
     })
