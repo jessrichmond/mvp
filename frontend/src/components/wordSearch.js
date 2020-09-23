@@ -19,7 +19,7 @@ class WordSearch extends Component {
     this.setState({value: event.target.value})
   }
 
-  handleSearch() {
+  handleSearch(event) {
     const query = this.state.value.replace(/ /g, '+');
     axios.get('https://api.datamuse.com/words', {
       params: {
@@ -28,17 +28,19 @@ class WordSearch extends Component {
       }
     })
     .then((res) => {
-      const options = res.data;
-      this.setState({ options });
-      this.setState({displayList: !displayList})
+      this.setState({options: res.data});
     })
     .catch(function (error) {
       console.log(error)
     })
 
+    event.preventDefault();
+
   }
 
   render() {
+    const { options } = this.state;
+
     return (
       <div>
         <form onSubmit={this.handleSearch}>

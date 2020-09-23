@@ -13,11 +13,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(DIST_DIR));
 
-// app.get(`${datamuse}ml=ringing+in+the+ears&max=4`, (req, res) => {
-//   res.status(200).send('YOOOOO');
-// })
 
-app.get('/load_entries', (req, res) => {
+app.get('/home', (req, res) => {
   Entry.findAll()
     .then((entries) => {
       res.status(200).send(entries);
@@ -38,11 +35,6 @@ app.post('/add', (req, res) => {
       res.status(500).send(err);
     })
 })
-
-// app.get('/search', (req, res) => {
-//   console.log(req.body);
-//   res.send
-// })
 
 
 app.listen(PORT, () => {
